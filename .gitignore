@@ -1,0 +1,12 @@
+*~
+\#*\#
+*.bak
+*.backup
+.*.sw[a-z]
+
+__pycache__/
+*.py[cod]
+
+*.beam
+
+.DS_Store
