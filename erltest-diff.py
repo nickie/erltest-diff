@@ -68,6 +68,14 @@ if __name__ == '__main__':
     suite_interesting = ['num', 'module', 'group', 'case', 'result', 'note']
 
     for suite in set(first.keys() + second.keys()):
+        if not (suite in first and suite in second):
+            print suite
+            if suite in first:
+                print "< only in left set of tests"
+            else:
+                print "> only in right set of tests"
+            print "-"*72
+            continue
         if first[suite]['tests'] != second[suite]['tests']:
             first_suite = parse_ts_suite(urllib.urlopen(first[suite]['log']))
             second_suite = parse_ts_suite(urllib.urlopen(second[suite]['log']))
